@@ -47,6 +47,7 @@ This project helped me practice:
 | `index.html` | Website structure |
 | `style.css` | Visual design |
 | `script.js` | Interactive browser game |
-(Used AI to make the game interactive and attractive)
+
+(Used AI For making the game interactive and attractive)
 
 Made while learning C. 🌱
