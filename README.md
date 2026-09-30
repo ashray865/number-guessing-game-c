@@ -1,37 +1,51 @@
- 
-# Number Guessing Game (C)
+# 🎯 Number Guessing Game
 
-A simple console game written in C. The computer picks a random number between 1 and 100, and you keep guessing until you get it right.
+My first C programming project, presented as an interactive web experience.
 
-## How it works
+## About the project
 
-- The program picks a random number using `rand()`, seeded with the current time.
-- After each guess, it tells you to go higher or lower.
-- When you guess correctly, it shows how many attempts you took.
+The original program is a command-line number guessing game written in C. It:
 
-## How to run
+- Generates a random number between 1 and 100
+- Takes guesses from the user
+- Tells the player to go higher or lower
+- Counts the number of attempts
+- Stops when the correct number is guessed
 
-1. Install a C compiler (GCC).
-2. Compile:
-```
-   gcc main.c -o game
-```
-3. Run:
-   - Linux/macOS: `./game`
-   - Windows: `game.exe`
+The `main.c` file is the original C source. The browser version in `index.html`, `style.css`, and `script.js` recreates the same core game idea for the web.
 
-## What I practiced
+## 🚀 Run locally
 
-- Loops (`do-while`)
-- Conditionals (`if / else if / else`)
-- Random numbers with `rand()` and `srand()`
-- Reading user input with `scanf()`
+You can simply open `index.html` in a browser.
 
-## Known limitations / next steps
+## 🌐 Deploy with GitHub Pages
 
-- Entering a non-number (like a letter) is not handled yet. I plan to add input validation.
-- Possible additions: difficulty levels, a play-again option, a maximum number of attempts.
+1. Create or open your GitHub repository.
+2. Upload `index.html`, `style.css`, `script.js`, and `main.c`.
+3. Go to **Settings → Pages**.
+4. Under **Build and deployment**, choose **Deploy from a branch**.
+5. Select your main branch and `/ (root)`.
+6. Save and wait for GitHub Pages to publish the site.
 
-## Acknowledgements
+## 🧠 What I learned
 
-I learned C from CodeWithHarry's tutorials on YouTube.
+This project helped me practice:
+
+- Variables
+- `scanf()` and `printf()`
+- `if / else if / else`
+- `do...while` loops
+- `rand()` and `srand()`
+- Basic program flow
+- Compiling and running a C program
+
+## 📁 Files
+
+| File | Purpose |
+|---|---|
+| `main.c` | Original C project |
+| `index.html` | Website structure |
+| `style.css` | Visual design |
+| `script.js` | Interactive browser game |
+
+Made while learning C. 🌱

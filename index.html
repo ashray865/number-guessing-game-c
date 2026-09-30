@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An interactive Number Guessing Game built from a beginner C project.">
+  <title>Number Guessing Game | C Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-grid"></div>
+
+  <header class="nav">
+    <a class="brand" href="#">
+      <span class="brand-mark">&gt;_</span>
+      <span>Number Guessing Game</span>
+    </a>
+    <a class="github" href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MY FIRST C PROJECT</p>
+        <h1>Guess the<br><span>number.</span></h1>
+        <p class="lead">
+          A simple C program transformed into an interactive web experience.
+          Pick a number from 1 to 100 and see how quickly you can crack it.
+        </p>
+        <div class="tech-row">
+          <span>C</span><span>GCC</span><span>Random Numbers</span><span>GitHub Pages</span>
+        </div>
+      </div>
+
+      <div class="game-card" id="gameCard">
+        <div class="card-top">
+          <span class="status-dot"></span>
+          <span id="statusText">GAME READY</span>
+          <span class="attempts">Attempts: <b id="attemptCount">0</b></span>
+        </div>
+
+        <div class="number-display" id="hintDisplay">?</div>
+        <p class="hint" id="hintText">I'm thinking of a number between 1 and 100.</p>
+
+        <form id="guessForm">
+          <label for="guessInput">YOUR GUESS</label>
+          <div class="input-row">
+            <input id="guessInput" type="number" min="1" max="100" placeholder="e.g. 42" autocomplete="off" required>
+            <button type="submit" id="guessButton">Guess <span>↵</span></button>
+          </div>
+        </form>
+
+        <button class="reset" id="resetButton">↻ New game</button>
+        <div class="message" id="message" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="section-heading">
+        <p class="eyebrow">HOW IT WORKS</p>
+        <h2>Small program. Real concepts.</h2>
+        <p>The original C project is simple by design, making it a great first step into programming fundamentals.</p>
+      </div>
+
+      <div class="steps">
+        <article>
+          <span class="step-no">01</span>
+          <h3>Generate</h3>
+          <p>A random number from 1 to 100 is generated when the program starts.</p>
+          <code>rand() % 100 + 1</code>
+        </article>
+        <article>
+          <span class="step-no">02</span>
+          <h3>Guess</h3>
+          <p>The player enters a number and the program counts each attempt.</p>
+          <code>scanf("%d", &guessed)</code>
+        </article>
+        <article>
+          <span class="step-no">03</span>
+          <h3>Compare</h3>
+          <p>The guess is compared with the hidden number and a useful hint is returned.</p>
+          <code>if / else if / else</code>
+        </article>
+        <article>
+          <span class="step-no">04</span>
+          <h3>Repeat</h3>
+          <p>The loop continues until the player finds the correct number.</p>
+          <code>do { ... } while (...)</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="code-section">
+      <div class="code-copy">
+        <p class="eyebrow">THE ORIGINAL</p>
+        <h2>From C to the browser.</h2>
+        <p>
+          The browser version recreates the same core idea with HTML, CSS and JavaScript.
+          The original C source remains the foundation of the project.
+        </p>
+        <a class="outline-button" href="main.c" download>Download main.c ↓</a>
+      </div>
+
+      <pre class="code-window"><div class="window-bar"><i></i><i></i><i></i><span>main.c</span></div><code><span class="pp">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+<span class="pp">#include</span> <span class="str">&lt;stdlib.h&gt;</span>
+<span class="pp">#include</span> <span class="str">&lt;time.h&gt;</span>
+
+<span class="type">int</span> main()
+{
+    srand(time(<span class="num">0</span>));
+
+    <span class="type">int</span> randomNumber = (rand() % <span class="num">100</span>) + <span class="num">1</span>;
+    <span class="type">int</span> guessed;
+    <span class="type">int</span> no_of_guesses = <span class="num">0</span>;
+
+    <span class="keyword">do</span>
+    {
+        scanf(<span class="str">"%d"</span>, &guessed);
+        no_of_guesses++;
+
+        <span class="keyword">if</span> (guessed &gt; randomNumber)
+            printf(<span class="str">"Lower number please\n"</span>);
+        <span class="keyword">else if</span> (guessed &lt; randomNumber)
+            printf(<span class="str">"Higher number please\n"</span>);
+        <span class="keyword">else</span>
+            printf(<span class="str">"Congratulations!"</span>);
+
+    } <span class="keyword">while</span> (guessed != randomNumber);
+
+    <span class="keyword">return</span> <span class="num">0</span>;
+}</code></pre>
+    </section>
+
+    <section class="footer-card">
+      <div>
+        <p class="eyebrow">PROJECT NOTE</p>
+        <h2>Built while learning C.</h2>
+        <p>This project is intentionally simple. The goal is to learn variables, input, conditions, loops, functions from the standard library, and basic program flow.</p>
+      </div>
+      <div class="mini-terminal">
+        <div><span class="prompt">$</span> gcc main.c -o game</div>
+        <div><span class="prompt">$</span> ./game</div>
+        <div class="cursor">█</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 · My first C project</span>
+    <span>Built for GitHub Pages</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
